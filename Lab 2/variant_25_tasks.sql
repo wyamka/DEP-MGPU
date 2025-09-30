@@ -1,3 +1,4 @@
+-- Савкина Мария st_84 Вариант 25
 -- Задание 1: [Создать представление по регионам]
 CREATE VIEW dw.region AS
 SELECT 
@@ -28,3 +29,16 @@ JOIN stg.orders o
 JOIN public.people p
     ON o.region = p.region
 GROUP BY p.person, p.region;
+
+
+-- Задание 3: [Рассчитать среднюю скидку по сегментам]
+SELECT
+  o.segment,
+  ROUND(AVG(sf.discount), 4) AS avg_discount,
+  COUNT(*) AS orders_count
+FROM dw.sales_fact sf
+JOIN public.orders o
+  ON sf.order_id = o.order_id
+WHERE sf.discount IS NOT NULL
+GROUP BY o.segment
+ORDER BY avg_discount DESC;
