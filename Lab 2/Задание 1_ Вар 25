@@ -1,0 +1,13 @@
+-- Задание 1: [Создать представление по регионам]
+CREATE VIEW dw.region AS
+SELECT 
+    o.region,
+    o.country,
+    SUM(f.sales) AS total_sales,
+    SUM(f.profit) AS total_profit,
+    SUM(f.quantity) AS total_quantity,
+    AVG(f.discount) AS avg_discount
+FROM dw.sales_fact f
+JOIN stg.orders o 
+    ON f.order_id = o.order_id
+GROUP BY o.region, o.country;
