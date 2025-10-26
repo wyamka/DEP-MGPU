@@ -6,7 +6,8 @@
 [Перейти в Yandex DataLens](https://datalens.yandex/fq65o006r3180)
 
 ## 🔗 Ссылка на опрос
-📄 [Ссылка на опрос](https://forms.gle/FyHW9UxSc99ms22dA)  
+[Ссылка на опрос](https://forms.gle/FyHW9UxSc99ms22dA)  
+
 ---
 
 ## 🧭 Введение
